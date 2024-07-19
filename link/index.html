@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Home Page</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Added for better contrast */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+main {
+    padding: 2rem;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+}
+
+.button {
+    background-color: rgb(15, 16, 16);
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+p.header {
+    font-size: 20px;
+    text-align: center;
+    background-color: bisque;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+ul li {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    color: #fff;
+    margin: 0 5px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.service {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: auto; 
+}
+
+.service h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.service p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .services {
+        padding: 1rem;
+    }
+    .service {
+        width: 100%; 
+    }
+}
+.download-our-app{
+    margin: 20px;
+}
+.download-our-app a img{
+    width:100px;
+    height:100px;
+    margin-left: 200px;
+    margin-top: 50px;
+}
+.testimonials {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .text {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            width: fit-content;
+        }
+
+        .text p {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .testimonials-2 {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .person {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 200px; /* Adjust width as needed */
+        }
+
+        .person img {
+            width: 100px; /* Adjust image size */
+            height: 100px; /* Adjust image size */
+            border-radius: 50%; /* Rounded corners for circular images */
+            margin-bottom: 10px;
+        }
+
+        .person p {
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Simple Home Page</h1>
+    </header>
+    <main>
+        <button class="button"><a href="home.html">About Us</a></button>
+        <p class="header">We are here to help you.</p>
+        <h2>Our Services</h2>
+        <ul>
+            <li><a href="#service-1">Service 1</a></li>
+            <li><a href="#service-2">Service 2</a></li>
+            <li><a href="#service-3">Service 3</a></li>
+        </ul>
+    </main>
+    <section class="services">
+        <div class="service" id="service-1">
+            <h1>Service 1</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+        </div>
+
+        <div class="service" id="service-2">
+            <h1>Service 2</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+        </div>
+
+        <div class="service" id="service-3">
+            <h1>Service 3</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            </p>
+        </div>
+
+        <div class="download-our-app">
+            <h1>For Better Experiance download our App</h1>
+            <a href="https://play.google.com/store/apps?hl=en_US" target="_blank"><img src="images\www_playstore - Yahoo Search Results _ Google play gift card, Play store app, Google play.jpg" alt="playstore image"></a>
+        </div>
+
+        <div class="testimonials">
+            <div class="text">
+                <p>Our Testimonials</p>
+            </div>
+            <div class="testimonials-2">
+                <div class="person">
+                    <img src="images\7da81fa1-7bf1-485d-b86a-9cd6392fdea9.jpg" alt="">
+                    <p class="person-detail">random person</p>
+                </div>
+                <div class="person">
+                    <img src="images\download (1).jpg" alt="">
+                    <p class="random-person">idk them fr</p>
+                </div>
+                <div class="person">
+                    <img src="images\LOEWE's FW21 _A Show In The News_ Offers an Alternative to the Fashion Show.jpg" alt="">
+                    <p class="random-person">sup bro</p>
+                </div>
+               
+
+                
+            </div>
+        </div>
+    </section>
+
+    <button class="button"><a href="contact.html">Contact Us</a></button>
+    <footer>
+        <p>© 2023 Simple Home Page. All rights reserved.</p>
+    </footer>
+</body>
+</html>

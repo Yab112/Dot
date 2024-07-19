@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+        }
+        input, textarea {
+            margin-bottom: 15px;
+            padding: 8px;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .button-2{
+            padding: 10px;
+            margin-top:50px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .button-2:hover{
+            background-color: #0b0b0b;
+            transform: scale(1.1);
+        }
+        .button-2 a{
+            color: black;
+            text-decoration: none;
+        }
+        .button-2 a:hover{
+            color: white;
+        }
+        .contact-section {
+            color: #fff;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .contact-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .manager-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .manager-card img {
+            width: 150px; 
+            height: 150px; 
+            border-radius: 10%; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .manager-card p {
+            font-size: 16px;
+            color: #0a0404;
+            margin: 0;
+        }
+
+        .manager-card .email {
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #080404;
+        }
+
+        .manager-card .email:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button class="button" type="submit">Send Message</button>
+        </form>
+
+
+    </div>
+
+    <section class="contact-section">
+        <h2>Contact Our Manager</h2>
+        <div class="manager-card">
+            <img src="images\LOEWE's FW21 _A Show In The News_ Offers an Alternative to the Fashion Show.jpg" alt="Manager">
+            <p>John Doe</p>
+            <a href="mailto:john.doe@example.com" class="email">john.doe@example.com</a>
+        </div>
+    </section>
+
+    <button class="button-2"><a href="index.html">Back To Home Page</a></h2></button>
+</body>
+</html>
