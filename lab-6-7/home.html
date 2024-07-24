@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>videoflixer</title>
+    <style>
+        body {
+            margin: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            position: relative;
+        }
+        header {
+            color: rgb(249, 246, 246);
+            display: flex;
+            gap:18rem;
+            padding: 10px 20px;
+            background-color: rgb(28, 26, 26);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            margin:20px;
+        }
+        .header-span {
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .nav-1 ul {
+            display: flex;
+            gap: 12rem;
+        }
+        .nav-1 ul li {
+            list-style: none;
+        }
+        .nav-1 ul li a {
+            text-decoration: none;
+            color: rgb(236, 226, 226);
+            font-size: 20px;
+        }
+        .nav-1 ul li a:hover {
+            text-decoration: underline;
+            color: rgb(237, 13, 13);
+            transform: scale(1.1);
+        }
+        .hero {
+            background-image: url('./files/images/download (4).jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            margin-top: 60px;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            max-width: 600px;
+        }
+        .hero-content h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .hero-content a {
+            padding: 15px 30px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            margin-right: 10px;
+            display: inline-block;
+        }
+        .hero-content a:first-child {
+            background-color: #e50914;
+        }
+        .hero-content a:last-child {
+            background-color: #f5c518;
+            color: #000;
+        }
+        .main-content {
+            padding-top: 20px;
+            padding: 20px 50px;
+        }
+        .section-title {
+            font-size: medium;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .movie-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .card {
+            background-color: rgb(18, 18, 18);
+            border: none;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px;
+            display: flex;
+            flex-direction: row;
+            max-width: 300px;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100px;
+            height: 150px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #fff;
+        }
+        .card-content h2 {
+            margin: 0 0 10px;
+        }
+        .card-content p {
+            margin: 0 0 20px;
+        }
+        .card-content button {
+            color: aliceblue;
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .card-content button a {
+            text-decoration: none;
+            color: white;
+        }
+        .search-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 30px;
+            margin-top: 14rem;
+        }
+        .search-section form {
+            display: flex;
+            align-items: center;
+        }
+        .search-section label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .search-section select,
+        .search-section input[type="text"],
+        .search-section input[type="submit"] {
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+        .search-section input[type="text"] {
+            margin-right: 10px;
+        }
+        .video-section {
+            display: flex;
+        }
+        .filter-bar {
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+        }
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+        .filter-group label {
+            margin-bottom: 5px;
+            color: #e50914;
+        }
+        .filter-group select {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #333;
+            background-color: #1c1c1c;
+            color: #fff;
+        }
+        .filter-bar button[type="submit"] {
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .videos {
+            flex: 3;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .videos video {
+            border-radius: 10px;
+            width: 100%;
+            height: auto;
+        }
+        .app-section {
+            text-align: center;
+            margin-top:10rem;
+            height: 800px;
+        }
+        .app-section h1 {
+            font-weight: bold;
+            font-size: 7rem;
+        }
+        .app-section img {
+            margin-top: 30rem;
+
+        }
+        footer {
+            background-color: #1c1c1c;
+            color: #fff;
+            padding: 20px;
+            width: 100%;
+            height: 24rem;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 10px;
+        }
+        .footer-section {
+            flex: 1;
+            margin: 0 10px;
+        }
+        .footer-section h3 {
+            margin-top: 0;
+            color: #e50914;
+        }
+        .footer-section p,
+        .footer-section ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        .footer-section ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #333;
+        }
+        .testimonials {
+        background-color: #110d0d;
+        padding: 50px 0;
+        text-align: center;
+    }
+
+.testimonials-card {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.testimonial {
+    background: rgb(18, 16, 16);
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.testimonial-img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.testimonial-content {
+    text-align: center;
+}
+
+.testimonial-name {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+.testimonials-title{
+    color: #e1e1e1;
+}
+.testimonials-intro{
+    color: #e1e1e1;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <span class="header-span">Movies <span style="color: crimson;">Flixer</span></span>
+        <nav class="nav-1">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="videodetail.html">Watch Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Welcome to Movie Hub</h1>
+            <p>Your ultimate destination for movie trailers, reviews, and more!</p>
+            <a href="#login">Log In</a>
+            <a href="#explore">Explore Now</a>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <div class="movie-section">
+            <h2 class="section-title">Now Showing</h2>
+            <div class="card">
+                <img src="./files/images/download (4).jpg" alt="Thor">
+                <div class="card-content">
+                    <h2>Thor</h2>
+                    <p>Genre: Action</p>
+                    <button><a href="#">Play</a></button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./files/images/feb3a960-8922-48f9-a4c9-a48f00474eeb.jpg" alt="Justice League">
+                <div class="card-content">
+                    <h2>Justice League</h2>
+                    <p>Genre: Action</p>
+                    <button><a href="#">Play</a></button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./files/images/download (4).jpg" alt="Infinity War">
+                <div class="card-content">
+                    <h2>Infinity War</h2>
+                    <p>Genre: Action</p>
+                    <button><a href="#">Play</a></button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <h2 class="section-title">Coming Soon</h2>
+            <div style="display: flex; align-items: flex-start;">
+                <div class="card" style="flex: 1;">
+                    <img src="./files/images/download (4).jpg" alt="Infinity War">
+                    <div class="card-content">
+                        <h2>Infinity War</h2>
+                        <p>Genre: Action</p>
+                        <button><a href="#">watch trailor</a></button>
+                    </div>
+                </div>
+        
+                <div style="flex: 2; margin-left: 20px;">
+                    <h3 style="font-family: Georgia, 'Times New Roman', Times, serif; color: #e50914;">Infinity War</h3>
+                    <p style="font-family: Georgia, 'Times New Roman', Times, serif; margin-bottom: 20px;">Get ready for the adrenaline-pumping action in "Spectral Fury." This high-octane thriller follows an elite team of operatives as they battle a rogue faction threatening global security. With explosive stunts, mind-bending special effects, and a gripping storyline, "Spectral Fury" promises to be the ultimate action spectacle of the year.</p>
+                    <p style="font-family: Georgia, 'Times New Roman', Times, serif; margin-bottom: 10px;"><strong>Release Date:</strong> September 15, 2024</p>
+                    <p style="font-family: Georgia, 'Times New Roman', Times, serif; margin-bottom: 10px;"><strong>Director:</strong> Alex Martinez</p>
+                    <p style="font-family: Georgia, 'Times New Roman', Times, serif; margin-bottom: 10px;"><strong>Starring:</strong> James Hart, Emma Lee, and Michael Brooks</p>
+                    <p style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Runtime:</strong> 135 minutes</p>
+                    <p style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Rating:</strong> PG-13</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <h2 class="section-title">Top Rated Movies</h2>
+
+            <div style="display: flex; gap: 1.2rem; background-color: #333;">
+                <div style="display: flex; align-items: flex-start;">
+                    <div class="card" style="flex: 1;">
+                        <img src="./files/images/download (4).jpg" alt="Infinity War">
+                        <div class="card-content">
+                            <h2>Infinity War</h2>
+                            <p>Genre: Action</p>
+                            <button><a href="#">watch trailor</a></button>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: flex-start;">
+                    <div class="card" style="flex: 1;">
+                        <img src="./files/images/download (4).jpg" alt="Infinity War">
+                        <div class="card-content">
+                            <h2>Infinity War</h2>
+                            <p>Genre: Action</p>
+                            <button><a href="#">watch trailor</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: flex-start;">
+                    <div class="card" style="flex: 1;">
+                        <img src="./files/images/download (4).jpg" alt="Infinity War">
+                        <div class="card-content">
+                            <h2>Infinity War</h2>
+                            <p>Genre: Action</p>
+                            <button><a href="#">watch trailor</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: flex-start;">
+                    <div class="card" style="flex: 1;">
+                        <img src="./files/images/download (4).jpg" alt="Infinity War">
+                        <div class="card-content">
+                            <h2>Infinity War</h2>
+                            <p>Genre: Action</p>
+                            <button><a href="#">watch trailor</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background-color: #212020;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; margin-top: 10rem;">
+                <input type="text"placeholder="Search for movies, actors, or genres..." style="flex: 1; width:1.2rem ;padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-left: 50rem;">
+                <button type="submit" style="padding: 10px 20px; background-color: #e50914; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Search</button>
+            </div>
+            
+            <div class="search-section">
+                <div class="filter-bar">
+                    <div class="filter-group">
+                        <label for="genre">Filter by Genre:</label>
+                        <select id="genre">
+                            <option value="action">Action</option>
+                            <option value="comedy">Comedy</option>
+                            <option value="drama">Drama</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="language">Filter by Language:</label>
+                        <select id="language">
+                            <option value="english">English</option>
+                            <option value="hindi">Hindi</option>
+                            <option value="korean">Korean</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="popularity">Filter by Popularity:</label>
+                        <select id="popularity">
+                            <option value="all">All</option>
+                            <option value="most-watched">Most Watched</option>
+                            <option value="trending">Trending</option>
+                            <option value="top-rated">Top Rated</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="duration">Filter by Duration:</label>
+                        <select id="duration">
+                            <option value="all">All</option>
+                            <option value="short">Under 90 minutes</option>
+                            <option value="medium">90-150 minutes</option>
+                            <option value="long">Over 150 minutes</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="director">Filter by Director:</label>
+                        <select id="director">
+                            <option value="all">All</option>
+                            <option value="nolan">Christopher Nolan</option>
+                            <option value="tarantino">Quentin Tarantino</option>
+                            <option value="spielberg">Steven Spielberg</option>
+                            <!-- Add more directors as needed -->
+                        </select>
+                    </div>
+                    <button type="submit">Apply Filters</button>
+                </div>
+                <div class="videos">
+                    <!-- Movie Cards -->
+                    <div class="video-card">
+                        <video src="./files/videos/5098913-hd_1920_1080_30fps.mp4" controls></video>
+                    </div>
+                    <div class="video-card">
+                        <video src="./files/videos/5098913-hd_1920_1080_30fps.mp4" controls></video>
+                    </div>
+                    <div class="video-card">
+                        <video src="./files/videos/5098913-hd_1920_1080_30fps.mp4" controls></video>
+                    </div>
+                    <div class="video-card">
+                        <video src="./files/videos/5098913-hd_1920_1080_30fps.mp4" controls></video>
+                    </div>
+                    <div class="video-card">
+                        <video src="./files/videos/5098913-hd_1920_1080_30fps.mp4" controls></video>
+                    </div>
+                    <div class="video-card">
+                        <video src="./files/videos/5098913-hd_1920_1080_30fps.mp4" controls></video>
+                    </div>
+                    <div class="video-card">
+                        <video src="./files/videos/5098913-hd_1920_1080_30fps.mp4" controls></video>
+                    </div>
+                    <div class="video-card">
+                        <video src="./files/videos/5098913-hd_1920_1080_30fps.mp4" controls></video>
+                    </div>
+                </div>
+            </div>
+            
+                </main>
+        </div>
+   <hr>
+    <section class="testimonials">
+        <h2 class="testimonials-title">What Our Users Are Saying</h2>
+        <p class="testimonials-intro">Our users love Movie Flixe! Hear what they have to say about their experience with our platform. Listen to their testimonials below:</p>    
+        <div class="testimonials-card">
+            <div class="testimonial">
+                <img src="/files/images/feb3a960-8922-48f9-a4c9-a48f00474eeb.jpg" alt="User Image 1" class="testimonial-img">
+                <div class="testimonial-content">
+                    <h3 class="testimonial-name">User Name 1</h3>
+                    <audio controls>
+                        <source src="/files/audios/file_example_MP3_700KB.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+            <div class="testimonial">
+                <img src="/files/images/feb3a960-8922-48f9-a4c9-a48f00474eeb.jpg" alt="User Image 2" class="testimonial-img">
+                <div class="testimonial-content">
+                    <h3 class="testimonial-name">User Name 2</h3>
+                    <audio controls>
+                        <source src="/files/audios/file_example_MP3_700KB.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+            <div class="testimonial">
+                <img src="/files/images/feb3a960-8922-48f9-a4c9-a48f00474eeb.jpg" alt="User Image 3" class="testimonial-img">
+                <div class="testimonial-content">
+                    <h3 class="testimonial-name">User Name 3</h3>
+                    <audio controls>
+                        <source src="/files/audios/file_example_MP3_700KB.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+            <div class="testimonial">
+                <img src="/files/images/feb3a960-8922-48f9-a4c9-a48f00474eeb.jpg" alt="User Image 4" class="testimonial-img">
+                <div class="testimonial-content">
+                    <h3 class="testimonial-name">User Name 4</h3>
+                    <audio controls>
+                        <source src="/files/audios/file_example_MP3_700KB.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="app-section">
+        <h1 >Download the App</h1>
+        <p style="margin-bottom: 20px; color: #333; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">
+            Experience Movie Flixe on the go! Download our app to watch trailers, read reviews, and stay updated with the latest movies anytime, anywhere. Get it now from your favorite app store.
+        </p>
+        <div style="text-align: center;">
+            <a href="#"><img src="./files/images/Google Play Store_ Auto-Play-Videos lassen sich deaktivieren.jpg" width="120" height="120" alt="Play Store" style="margin: 0 10px;"></a>
+            <a href="#"><img src="./files/images/Play Store logo in (_EPS + .AI + .SVG + .CDR) vector free download" width="120" height="120" alt="App Store" style="margin: 0 10px;"></a>
+        </div>
+    </section>
+    
+
+    <div style="background-color: #f4f4f4; padding: 20px; border-radius: 10px; text-align: center; max-width: 600px; margin: 20px auto;">
+        <h2 style="margin-bottom: 10px; color: #e50914; font-family: Arial, sans-serif;">Subscribe to Our Newsletter</h2>
+        <p style="margin-bottom: 20px; color: #333; font-family: Georgia, 'Times New Roman', Times, serif;">Stay updated with the latest movies, trailers, and exclusive offers. Subscribe now!</p>
+        <form style="display: flex; justify-content: center; align-items: center;">
+            <input type="email" placeholder="Enter your email" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-right: 10px; flex: 1;">
+            <button type="submit" style="padding: 10px 20px; background-color: #e50914; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Subscribe</button>
+        </form>
+    </div>
+    
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We provide the latest movies, trailers, and reviews for you to enjoy.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="display.html">Watch Now</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@videoflixer.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Movie Hub. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Movie Flixe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container-1 {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            margin: 2rem auto;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+            background-image: url('/files/images/download.jpg');
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            padding-bottom: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .contact-info, .contact-form {
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            width: 50rem;
+            margin-left: 20rem;
+        }
+        .contact-info h2, .contact-form h2 {
+            text-align: center;
+        }
+        .contact-info p {
+            margin: 10px 0;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-group textarea {
+            height: 150px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #e8491d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container-1">
+            <h1>Contact Us</h1>
+            <button style="border: 1px solid white; background-color: transparent;"><a style="text-decoration: none; color: white;" href="home.html">Back To Home page</a></button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="contact-info">
+            <h2>We’d Love to Hear From You!</h2>
+            <p>Thank you for visiting Movie Flixe. Whether you have a question, feedback, or just want to say hello, we're here to help. Please feel free to reach out to us using any of the methods below.</p>
+            <p><strong>Email:</strong><br>
+            For general inquiries and support: <a href="mailto:support@moviefixe.com">support@moviefixe.com</a><br>
+            For partnership opportunities: <a href="mailto:partnerships@moviefixe.com">partnerships@moviefixe.com</a></p>
+            <p><strong>Phone:</strong><br>
+            Customer Service: +2 (519) 956-7890<br>
+            Business Inquiries: +2 (519) 456-7891</p>
+            <p><strong>Social Media:</strong><br>
+            Follow us and send us a message on:<br>
+            <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a> | <a href="#">LinkedIn</a></p>
+            <p><strong>Mailing Address:</strong><br>
+            Movie Flixe<br>
+            123 Movie Lane<br>
+            Cinema City, CA 90001<br>
+            USA</p>
+            <p><strong>Support Hours:</strong><br>
+            Our team is available to assist you during the following hours:<br>
+            Monday - Friday: 9:00 AM - 6:00 PM (PST)<br>
+            Saturday: 10:00 AM - 4:00 PM (PST)<br>
+            Sunday: Closed</p>
+            <p>Check out our <a href="#">Frequently Asked Questions</a> page for quick answers to common questions.</p>
+            <p>Subscribe to our newsletter for the latest updates, movie recommendations, and special offers.</p>
+        </div>
+
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
