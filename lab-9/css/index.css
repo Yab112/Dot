@@ -1,0 +1,109 @@
+
+*{
+    margin:3px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    background-color: rgb(242, 245, 247);
+}
+.first-part{
+   background-color: white;
+   border:none;
+   height: 100px;
+   display: flex;
+   flex-direction: column;
+   gap: 3px;
+}
+.first-part h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+.first-part span{
+    border-left: 4px solid red;
+    border-right: 2px solid red;
+    border-bottom:1px dotted black;
+    border-top:1px dotted black;
+    width: auto;
+    padding: 3px;
+}
+
+.part-two{
+    background-color: white;
+    height:500px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap:3x;
+    padding: 4px;
+}
+
+.part-two .box{
+    border:1px solid black;
+    border-radius: 20px;
+    width: 200px;
+    height:200px;
+    padding: 12px;
+}
+.part-two .box-1{
+    border:none;
+    border-radius: 20px;
+    background-color: yellow;
+    width: 200px;
+    height:200px;
+    padding: 12px;
+}
+
+
+.part-3 {
+    background-color: white;
+    padding: 5px;
+  }
+  
+  .part-3 .part-3-box {
+    border: 1px solid black;
+    padding: 19px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .part-3 .part-3-box .part-1 {
+    color: rgb(90, 243, 90);
+    align-self: center;
+  }
+  
+  .part-3 .part-3-box .part-2 {
+    text-align: start;
+    text-decoration: none;
+    letter-spacing: 2px;
+    align-self: flex-start;
+    margin-top: 10px;
+  }
+  .part-4{
+    display: flex;
+    flex-direction: column;
+    gap:12px;
+    background-color:white;
+    padding: 10px;
+    border:1px solid white;
+    width: auto;
+    height:100px;
+  }
+  .part-4 .flex-shit{
+    display:flex;
+    justify-content: space-between;
+  }
+  .part-4 .flex-shit .text-part h1{
+    font-size: 3rem;
+    color:black;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  .part-4 .flex-shit .box{
+    background-color: yellow;
+    width: 80px;
+    height: 80px;
+    margin: 0;
+  }
