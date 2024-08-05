@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab-10</title>
+    <style>
+        * {
+            margin: 10px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .sec {
+            width: 100%;
+            height: 200px;
+            background-color: rgba(239, 246, 246, 0.073);
+            display: flex;
+        }
+
+        .part-1 {
+            width: 90%;
+            height: 100px;
+            background-color: rgb(245, 241, 241);
+            padding: 3px;
+            border: none;
+            border-radius: 6px;
+            box-shadow: 1px 1px 1px 1px rgb(248, 248, 248);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .part-1-1 a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+            background-color: green;
+            padding: 15px;
+            font-weight: bold;
+        }
+
+        .part-1-1 a:hover {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            font-weight: 600;
+            background-color: white;
+            padding: 10px;
+            border: 3px solid green;
+        }
+
+        .part-1-1 {
+            background-color: white;
+            padding: 20px;
+        }
+
+
+        /* part-2 */
+        .part-2 {
+            width: 90%;
+            height: 150px;
+            background-color: white;
+            display: flex;
+            border-radius: 6px;
+            box-shadow: 1px 1px 1px 1px rgb(248, 248, 248);
+            padding: 4px;
+        }
+
+        .part-2-1 {
+            width: 100%;
+            height: 100px;
+            background-color: yellow;
+            margin-left: 5px;
+            display: flex;
+        }
+
+        .part-3 {
+            list-style: none;
+            margin-left: 10px;
+            text-align: center;
+        }
+
+        .part-3 li {
+            font-size: 15px;
+            font-weight: 600;
+            position: relative;
+            padding-left: 29px;
+
+        }
+
+        .part-3 li::before {
+            content: "";
+            width: 5px;
+            height: 5px;
+            background-color: #f5d20c;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .heading-container {
+            position: relative;
+            padding: 20px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            color: rgb(144, 66, 217);
+            border: none;
+            border-radius: 6px;
+            box-shadow: 1px 1px 1px 1px rgb(248, 248, 248);
+            margin-top: 4em;
+        }
+
+        .heading-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .heading-description {
+            font-size: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .heading-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20%;
+            height: 100%;
+            background-image: url("./download (3).jpg");
+            background-position: center;
+            background-size: cover;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        .display-prop {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            height: 100vh;
+            background-color: #f2f2f2;
+            box-shadow: 1px 1px 1px 1px rgb(248, 248, 248);
+        }
+
+        .display-prop span {
+            background-color: yellow;
+            padding: 0.5em;
+            display: inline;
+
+        }
+
+        .display-prop .span-2 {
+            background-color: yellow;
+            display: inline-block;
+            padding-top: 0;
+            padding-bottom: 4em;
+            padding-right: 3rem;
+        }
+
+        .display-prop .span-3 {
+            background-color: yellow;
+            width: 100px;
+            display: block;
+            padding-top: 0;
+            padding-bottom: 4em;
+            padding-right: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="sec">
+        <div class="part-1">
+            <div class="part-1-1">
+                <a href="#">This is a link</a>
+            </div>
+        </div>
+
+        <div class="part-2">
+            <div class="part-2-1">
+                <ul class="part-3">
+                    <li>Coffee</li>
+                    <li>Tea</li>
+                    <li>Coca Cola</li>
+                </ul>
+            </div>
+        </div>
+
+
+
+    </section>
+    <div class="heading-container">
+        <div class="heading-text">This is a heading</div>
+        <div class="heading-description">Because the image has a z-index of -1, it will be placed behind the text.</div>
+    </div>
+
+    <div class="display-prop">
+        <h1>The display Property</h1>
+        <h4>display:inline</h4>
+        <p>This text is text This is text <span>hellow</span><span>There</span>
+            this text is text This is text
+        </p>
+
+        <h4>display:inline-block</h4>
+        <p>This text is text This is text <span class="span-2">hellow</span><span class="span-2">There</span>
+            this text is text This is text
+        </p>
+        <h4>display:block</h4>
+        <p>this text is this text is <span class="span-3">hellow</span><span class="span-3">there</span>why only one
+            text is repeating it self</p>
+
+    </div>
+</body>
+
+</html>
