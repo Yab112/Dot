@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab-11</title>
+    <style>
+        body {
+            margin: 12px;
+            padding: 0;
+        }
+
+        .sec-1 {
+            background-color: rgb(229, 227, 245);
+            border: none;
+            border-radius: 10px;
+            padding: 0px;
+            width: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form {
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 60%;
+        }
+
+        .form span {
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .form input {
+            border: none;
+            background-color: transparent;
+            border-bottom: 2px solid black;
+            width: 80%;
+            padding: 5px;
+            outline: none;
+
+            .form input:focus {
+                border-bottom: 2px solid rgb(11, 11, 11);
+            }
+        }
+
+        .form select {
+            border: none;
+            background-color: transparent;
+            border-bottom: 2px solid black;
+            width: 80%;
+            padding: 5px;
+            outline: none;
+        }
+
+        .form select:focus {
+            border-bottom: 2px solid rgb(11, 11, 11);
+        }
+
+        button {
+            background-color: green;
+            padding: 4px;
+            border-radius: 5px;
+            width: 80%;
+        }
+
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* Dropdown menu styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin: 3rem;
+        }
+        .dropdown a{
+            text-decoration: none;
+            color: black;
+            background-color:green;
+            border-radius: 3px;
+            padding: 7px 8px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            margin-left: 69px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="sec-1">
+        <form action="send.php" class="form">
+            <div>
+                <label for="fname"><span>First Nmae</span></label><br>
+                <input type="text" id="fname" name="fname" placeholder="first name"><br>
+            </div>
+            <div>
+                <label for="lname"><span>Last Nmae</span></label><br>
+                <input type="text" id="lname" name="fname" placeholder="last name"><br>
+            </div>
+            <div>
+                <label for="fname"><span>Country</span></label><br>
+                <select name="" id="">
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                    <option value="usa">USA</option>
+                    <option value="usa
+                    ">USA</option>
+                </select><br>
+            </div>
+            <button>submit</button>
+
+        </form>
+    </section>
+    <section class="sec-2">
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <p style="color:black;font-family: 'Times New Roman', Times, serif;; ">hover one the  button to see the magic</p>
+                    <a href="#">Dropdown</a>
+                    <div class="dropdown-content">
+                        <a href="#">Option 1</a>
+                        <a href="#">Option 2</a>
+                        <a href="#">Option 3</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+    </section>
+
+</body>
+
+</html>
