@@ -6,8 +6,16 @@
     <title>lab-11</title>
     <style>
         body {
-            margin: 12px;
+            margin: 0;
             padding: 0;
+            height: 100vh;
+            background-color: #f0f0f0;
+            display: grid;
+            place-items: center;
+        }
+
+        .container {
+            text-align: center;
         }
 
         .sec-1 {
@@ -16,21 +24,11 @@
             border-radius: 10px;
             padding: 16px;
             width: 500px;
-            height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            margin-left: 12px;
+            margin-bottom: 24px;
         }
 
         .form {
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
             width: 100%;
-            margin-left: 0;
         }
 
         .form span {
@@ -38,28 +36,21 @@
             font-size: 19px;
         }
 
-        .form input {
-            background-color: whitesmoke;
-            width: 94.6%;
-            padding: 10px;
-            outline: none;
-            border:none;
+        .form div {
+            margin-bottom: 10px;
         }
 
-        .form input:focus {
-            border: 2px solid rgb(11, 11, 11);
-            outline: black;
-        }
-
+        .form input,
         .form select {
-            border: none;
-            background-color: transparent;
-            background-color: white;
-            width: 100%;
+            background-color: whitesmoke;
+            width: calc(100% - 20px);
             padding: 10px;
             outline: none;
+            border: none;
+            margin-top: 5px;
         }
 
+        .form input:focus,
         .form select:focus {
             border: 2px solid rgb(11, 11, 11);
         }
@@ -69,43 +60,54 @@
             padding: 10px;
             border-radius: 5px;
             width: 100%;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
-        ul,
-        li {
+        button:hover {
+            background-color: darkgreen;
+        }
+
+        button:active {
+            background-color: darkolivegreen;
+            transform: scale(0.98);
+        }
+
+        button:focus {
+            outline: 2px solid darkgreen;
+        }
+
+        ul, li {
             margin: 0;
             padding: 0;
             list-style: none;
         }
 
-        /* Dropdown menu styles */
         .dropdown {
             position: relative;
             display: inline-block;
-            margin: 3rem 0;
-            width: 23px%;
+            width: 200px;
         }
 
-        .dropdown a {
-            text-decoration: none;
-            color: black;
-            background-color: rgb(130, 130, 130);
-            border-radius: 3px;
-            padding: 7px 8px;
-            display: inline-block;
+        .dropdown-btn {
             width: 100%;
-            box-sizing: border-box;
-            margin-left: 12px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            background-color: darkgreen;
+            color: white;
+            border-radius: 3px;
         }
 
         .dropdown-content {
             display: none;
             position: absolute;
             background-color: #f9f9f9;
-            width: 200px;
+            width: 100%;
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
             z-index: 1;
-            margin-left: 49px;
         }
 
         .dropdown-content a {
@@ -113,57 +115,57 @@
             padding: 12px 16px;
             text-decoration: none;
             display: block;
+            transition: background-color 0.3s;
         }
 
         .dropdown-content a:hover {
             background-color: #24e35a;
         }
 
-        .dropdown:hover .dropdown-content {
+        .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content {
             display: block;
-        }
-        .dropdown-btn{
-            padding:19px;
-            width:auto;
         }
     </style>
 </head>
 <body>
-    <section class="sec-1">
-        <form action="send.php" class="form">
-            <div>
-                <label for="fname"><span>First Name</span></label><br>
-                <input type="text" id="fname" name="fname" placeholder="your first name..."><br>
-            </div>
-            <div>
-                <label for="lname"><span>Last Name</span></label><br>
-                <input type="text" id="lname" name="lname" placeholder="your last name..."><br>
-            </div>
-            <div>
-                <label for="country"><span>Country</span></label><br>
-                <select name="country" id="country">
-                    <option value="australia">Australia</option>
-                    <option value="canada">Canada</option>
-                    <option value="usa">USA</option>
-                </select><br>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
-    </section>
-    <section class="sec-2">
-        <nav>
-            <ul>
-                <li class="dropdown">
-                    <p style="color:black;font-family: 'Times New Roman', Times, serif;">Hover on the button to see the magic</p>
-                    <button class="dropdown-btn">Dropdown</button>
-                    <div class="dropdown-content">
-                        <a href="#">Option 1</a>
-                        <a href="#">Option 2</a>
-                        <a href="#">Option 3</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-    </section>
+    <div class="container">
+        <section class="sec-1">
+            <form action="send.php" class="form">
+                <div>
+                    <label for="fname"><span>First Name</span></label><br>
+                    <input type="text" id="fname" name="fname" placeholder="your first name..."><br>
+                </div>
+                <div>
+                    <label for="lname"><span>Last Name</span></label><br>
+                    <input type="text" id="lname" name="lname" placeholder="your last name..."><br>
+                </div>
+                <div>
+                    <label for="country"><span>Country</span></label><br>
+                    <select name="country" id="country">
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                        <option value="usa">USA</option>
+                    </select><br>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section class="sec-2">
+            <nav>
+                <ul>
+                    <li class="dropdown">
+                        <p style="color:black;font-family: 'Times New Roman', Times, serif;">Hover on the button to see the magic</p>
+                        <button class="dropdown-btn">Dropdown</button>
+                        <div class="dropdown-content">
+                            <a href="#">Option 1</a>
+                            <a href="#">Option 2</a>
+                            <a href="#">Option 3</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </div>
 </body>
 </html>
