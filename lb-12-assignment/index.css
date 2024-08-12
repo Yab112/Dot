@@ -1,104 +1,91 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.container{
+
+.container {
     width: 100%;
     height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     background-image: url("Dead Pool.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
-.login-box{
+
+.login-box {
     width: 320px;
     height: 320px;
     background: transparent;
     color: #fff;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
     padding: 20px 20px;
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 23px;
     display: flex;
     flex-direction: column;
     backdrop-filter: blur(10px);
-    
 }
-.login-box h1{
+
+.login-box h1 {
     margin: 0;
     padding: 0 0 20px;
     text-align: center;
-    font-size:30px;
+    font-size: 30px;
     font-weight: bold;
-    align-self: center;
 }
-.user-name{
+
+.user-name, .password {
     width: 100%;
 }
-.user-name input{
+
+.user-name input, .password input {
     width: 100%;
     margin-bottom: 20px;
     padding: 10px;
-    border-radius:10px;
+    border-radius: 10px;
     border: 1px solid #fff;
     background: #f8f4f477;
     outline: none;
     color: #fff;
 }
-.password{
-    width: 100%;
-}
-.password input{
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 10px;
-    border-radius:10px;
-    border: 1px solid #fff;
-    background: #f8f4f477;
-    outline: none;
-    color: #fff;
-}
-.bottom{
+
+.bottom {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.bottom a{
+
+.bottom a {
     text-decoration: none;
     color: #fb39b1;
 }
-.bottom a:hover{
-    text-decoration: none;
+
+.bottom a:hover {
     color: #eb0e0e;
 }
-.login-btn{
-    width:100%;
-    
+
+.login-btn {
+    width: 100%;
 }
-.login-btn button{
+
+.login-btn button {
     padding: 10px;
     background-color: darkgreen;
     color: #fff;
     border: none;
     width: 100%;
     margin-bottom: 3px;
-}
-.login-btn button:hover{
-    padding: 10px;
-    background-color: #03d860;
-    color: #fff;
-    border: none;
-    width: 100%;
-    margin-bottom: 3px;
-    border-radius: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
+.login-btn button:hover {
+    background-color: #03d860;
+    border-radius: 20px;
+}
