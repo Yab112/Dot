@@ -1,0 +1,335 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('rick.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 19rem;
+    padding: 2rem;
+}
+
+.hero-section .top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-section .top-section h1 {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.hero-section .nav-lin ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.hero-section .nav-lin ul li {
+    margin-left: 2rem;
+}
+
+.hero-section .nav-lin ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.hero-section .nav-lin ul li a:hover {
+    color: #ccc;
+    border-bottom: 2px solid red;
+}
+
+.hero-section .middle-elem {
+    text-align: center;
+    color: #fff;
+}
+
+.hero-section .middle-elem h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-family: bold;
+}
+
+.hero-section .middle-elem button {
+    background-color: #0e0467;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.hero-section .middle-elem button:hover {
+    background-color: #1e0db7;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        display: flex;
+        flex-direction: column;
+        gap: 15rem;
+    }
+    .top-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Our Work Section */
+.our-work {
+    margin: 10px 0px;
+}
+
+.texts {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.texts p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
+    margin-left:400px;
+    margin-right:400px;
+}
+
+/* HR below 'Our Work' section */
+.texts .line-above {
+    border-top: 4px solid rgb(165, 21, 21);
+    width: 20%;
+    margin: 20px auto;
+}
+
+/* Image Display */
+.image-display {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 0 15%;
+}
+
+.image-row {
+    display: flex;
+    gap: 20px;
+}
+
+.image-row img {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.image-row img.large {
+    flex-basis: calc(66.66% - 20px);
+}
+
+@media (max-width: 768px) {
+    .image-row {
+        display: flex;
+        gap: 10px;
+    }
+
+    .image-row img {
+        height: 200px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .image-row img.large {
+        flex-basis: calc(79% - 40px);
+    }
+    .texts p {
+        font-size: 1.1rem;
+        color: #555;
+        margin-bottom: 1rem;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+/* Features and Services Section */
+.main-section {
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    padding: 4rem 2rem;
+    background-color: rgb(237, 230, 230);
+}
+
+.feature-and-service {
+    padding: 4rem 2rem;
+}
+
+.feature-and-service .first-part {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.feature-and-service .first-part h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-and-service .first-part p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+/* HR below 'Features and Services' section */
+.feature-and-service .first-part .line {
+    border-top: 4px solid rgb(3, 3, 3);
+    margin: 20px auto;
+    width: 20%;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.card {
+    flex-basis: calc(100% - 80px);
+    padding: 2rem;
+    text-align: center;
+}
+
+.card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .card {
+        flex-basis: 100%;
+    }
+}
+
+/* Join Us Section */
+.join-us {
+    padding: 4rem 2rem;
+    color: #060303;
+}
+
+.join-us .join-us-text {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.join-us .join-us-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.join-us .join-us-text p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+/* HR below 'Join Us' section */
+.join-us .join-us-text hr {
+    border-top: 4px solid rgb(3, 3, 3);
+    margin: 20px auto;
+    width: 20%;
+}
+
+/* Form */
+.join-us .form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.join-us .form input[type="email"] {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    font-size: 1rem;
+}
+
+.join-us .form button {
+    background-color: #0e0467;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.join-us .form button:hover {
+    background-color: #1e0db7;
+}
+
+@media (max-width: 768px) {
+    .join-us .form {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .join-us .form input[type="email"] {
+        width: 80%;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: black;
+    color: #fff;
+    padding: 1rem 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+footer .dark-part {
+    margin-bottom: 1rem;
+}
+
+footer .vegue-part {
+    font-size: 0.9rem;
+}
+
+/* Centering HR Elements */
+hr {
+    margin: 20px auto;
+    border: none;
+    border-top: 4px solid black;
+    width: 20%;
+}
