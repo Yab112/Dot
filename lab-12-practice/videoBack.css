@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(images/background.png);
+    background-size: center;
+    background-position: center;
+}
+.navBar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    
+}
+.navBar ul{
+    position: absolute;
+    right: -2px;
+}
+.navBar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+.navBar ul li a{
+    text-decoration: none;
+    color: #f5ebeb;
+    text-transform: uppercase;
+}
+.navBar ul li a:hover:not(.active){
+    text-decoration: none;
+    color: #f5ebeb;
+    text-transform: uppercase;
+    font-weight: bold;border-bottom:2px solid lightgreen;
+}
+.acvtive{
+    text-decoration: none;
+    color: #f5ebeb;
+    text-transform: uppercase;
+    font-weight: bold;border-bottom:2px solid lightgreen;
+    background-color: blue;
+    padding: 2px;
+    border-radius: 20px;
+}
+
+.navBar img{
+    width: 60px;
+    height: auto;
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+.banner video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+.conatiner{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #f5ebeb;
+}
+.conatiner h1{
+    font-size: 100px;
+    margin-top: 80px;
+}
+.conatiner button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid lightseagreen;
+    background: transparent;
+    color: #f5ebeb;
+    cursor: pointer;
+}
