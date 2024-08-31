@@ -1,0 +1,41 @@
+.box {
+    height: 40px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-2{
+    height: 40px;
+    width: 185px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-3{
+    height: 40px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-4{
+    height: 40px;
+    width: 410px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-6{
+    height: 40px;
+    width: 640px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-12{
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
