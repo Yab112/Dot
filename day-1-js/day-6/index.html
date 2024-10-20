@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Converter</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div class="container-1">
+        <div class="image">
+             <img src="iamge/Screenshot 2024-10-20 162606.png" alt="">
+        </div>
+        <div class="answer">
+            <ul id="history-list">
+                <li><pre><code>const add = (a, b) => a + b;</code></pre></li>
+                <li><pre><code>const multiply = (a, b) => a * b;</code></pre></li>
+                <li><pre><code>const greet = (name) => `Hello, ${name}`;</code></pre></li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="converter">
+            <h2>Function to Arrow Function Converter</h2>
+            <form id="function-form">
+                <label for="traditional-func">Enter Traditional Function:</label>
+                <textarea id="traditional-func" placeholder="Enter traditional function here"></textarea>
+                
+                <button type="button" onclick="convertFunction()">Convert to Arrow Function</button>
+                
+                <label for="arrow-func">Converted Arrow Function:</label>
+                <textarea id="arrow-func" readonly></textarea>
+            </form>
+        </div>
+        
+        <div class="history">
+            <h3>Conversion History</h3>
+            <ul id="history-list"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
